@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int N = Integer.parseInt(br.readLine());
+		String[] S = br.readLine().split(" ");
+		List<int[]> list = new ArrayList<>();
+
+		for(int i = 1; i <= N; i++) {
+			int num = Integer.parseInt(S[i - 1]);
+			list.add(new int[]{i, num});
+		}
+
+		list.sort((a, b) -> Integer.compare(b[1], a[1]));
+		
+		System.out.println(list.get(0)[0] + " " + list.get(1)[0] + " " + list.get(2)[0]);
+	}
+}

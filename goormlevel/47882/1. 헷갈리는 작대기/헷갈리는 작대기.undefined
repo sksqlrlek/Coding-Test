@@ -1,0 +1,23 @@
+import java.io.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String input = br.readLine();
+		int a = 0;
+		int b = 0;
+		int c = 0;
+		int d = 0;
+
+		for(char ch : input.toCharArray()) {
+			if(ch == '1') a++;
+			if(ch == 'I') b++;
+			if(ch == 'l') c++;
+			if(ch == '|') d++;
+		}
+		
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+	}
+}

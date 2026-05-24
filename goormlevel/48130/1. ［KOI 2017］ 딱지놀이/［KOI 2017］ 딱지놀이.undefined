@@ -1,0 +1,40 @@
+import java.io.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+
+		int N = Integer.parseInt(br.readLine());
+		
+		for(int i = 0; i < N; i++) {
+			String[] a = br.readLine().split(" ");
+			String[] b = br.readLine().split(" ");
+			int[] A = new int[5];
+			int[] B = new int[5];
+			for(int l = 1; l < a.length; l++) {
+				int Ttakji = Integer.parseInt(a[l]);
+				A[Ttakji]++;
+			}
+			for(int l = 1; l < b.length; l++) {
+				int Ttakji = Integer.parseInt(b[l]);
+				B[Ttakji]++;
+			}
+
+			char result = 'D';
+
+			for (int ttakji = 4; ttakji >= 1; ttakji--) {
+					if (A[ttakji] > B[ttakji]) {
+							result = 'A';
+							break;
+					} else if (A[ttakji] < B[ttakji]) {
+							result = 'B';
+							break;
+					}
+			}
+
+			sb.append(result).append('\n');
+		}
+		
+		System.out.println(sb.toString());
+	}
+}

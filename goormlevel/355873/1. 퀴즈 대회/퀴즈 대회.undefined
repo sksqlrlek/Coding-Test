@@ -1,0 +1,23 @@
+import java.io.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String N = br.readLine();
+		String[] ok = br.readLine().split(" ");
+
+		int score = 0;
+		int continueCorrect = 1;
+
+		for(int i = 0; i < ok.length; i++) {
+
+			if(ok[i].equals("1")) {
+				score += continueCorrect;
+				continueCorrect++;
+			} else {
+				continueCorrect = 1;
+			}
+		}
+		
+		System.out.println(score);
+	}
+}

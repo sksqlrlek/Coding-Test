@@ -1,0 +1,42 @@
+import java.io.*;
+class Main {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String[] desk = br.readLine().split(" ");
+		String[] A = br.readLine().split(" ");
+		String[] B = br.readLine().split(" ");
+
+		int deskW = Integer.parseInt(desk[0]);
+		int deskH = Integer.parseInt(desk[1]);
+
+		int aW = Integer.parseInt(A[0]);
+		int aH = Integer.parseInt(A[1]);
+
+		int bW = Integer.parseInt(B[0]);
+		int bH = Integer.parseInt(B[1]);
+
+		String result = "NO";
+
+		if ((aW + bW <= deskW && Math.max(aH, bH) <= deskH) ||
+				(Math.max(aW, bW) <= deskW && aH + bH <= deskH)) {
+				result = "YES";
+		}
+
+		if ((aH + bW <= deskW && Math.max(aW, bH) <= deskH) ||
+				(Math.max(aH, bW) <= deskW && aW + bH <= deskH)) {
+				result = "YES";
+		}
+
+		if ((aW + bH <= deskW && Math.max(aH, bW) <= deskH) ||
+				(Math.max(aW, bH) <= deskW && aH + bW <= deskH)) {
+				result = "YES";
+		}
+
+		if ((aH + bH <= deskW && Math.max(aW, bW) <= deskH) ||
+				(Math.max(aH, bH) <= deskW && aW + bW <= deskH)) {
+				result = "YES";
+		}
+
+		System.out.println(result);
+	}
+}
